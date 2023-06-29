@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 // import { Link } from 'react-router-dom'; // If you're using React Router
 
 const Navbar = () => {
@@ -106,8 +106,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <AnimatePresence>
       {isOpen && (
-        <div className="md:hidden absolute w-full z-10 rounded-sm bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-lg">
+        <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        className="md:hidden absolute w-full z-10 rounded-sm bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/"
@@ -141,8 +146,9 @@ const Navbar = () => {
             </Link>
             {/* Add more navigation links as needed */}
           </div>
-        </div>
+        </motion.div>
       )}
+        </AnimatePresence>
     </nav>
   );
 };
