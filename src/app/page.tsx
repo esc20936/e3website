@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0, y: "100%" },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    visible: { opacity: 1, y: 0, transition: { type: "spring" } },
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between aurora">

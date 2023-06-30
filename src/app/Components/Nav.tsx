@@ -4,15 +4,29 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 // import { Link } from 'react-router-dom'; // If you're using React Router
 
-const Navbar = () => {
+interface NavbarProps {
+  theme?: "light" | "dark";
+}
+
+
+const Navbar = ( 
+  { theme = "light" }: NavbarProps
+) => {
+
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const bgColor = theme === "light" ? "" : "bg-black";
+  const textColor = theme === "light" ? "text-gray-900" : "text-white";
+
+  const bgColorResponsive = theme === "light" ? "bg-white bg-opacity-20" : "bg-black bg-opacity-70";
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="w-full z-10">
+    <nav className={`w-full z-10 ${bgColor}`}>
       <div className="w-full px-4 sm:px-0 lg:px-8">
         <div className="flex items-center justify-end h-16">
           <div className="flex items-center">
@@ -24,31 +38,31 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 href="/"
-                className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
+                className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Inicio
               </Link>
               <Link
                 href="/automatization"
-                className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
+                className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Automatización
               </Link>
               <Link
                 href="/Automatization"
-                className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
+                className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Emotron
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
+                className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 CCTV-Cámaras
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
+                className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Asesorias
               </Link>
@@ -112,36 +126,40 @@ const Navbar = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="md:hidden absolute w-full z-10 rounded-sm bg-white bg-opacity-10 backdrop-blur-lg rounded drop-shadow-lg"
+            className={`md:hidden absolute w-full z-10 rounded-sm ${bgColorResponsive} backdrop-blur-lg rounded drop-shadow-lg`}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+
+  
+
               <Link
                 href="/"
-                className="text-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Inicio
               </Link>
+
               <Link
-                href="/about"
-                className="text-gray-900 hover:text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                href="/automatization"
+                className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Automatización
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Emotron
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 CCTV-Cámaras
               </Link>
               <Link
                 href="/contact"
-                className="text-gray-900 hover:text-gray-400 block px-3 py-2 rounded-md text-base font-medium"
+                className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Asesorias
               </Link>
