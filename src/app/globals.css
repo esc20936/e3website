@@ -25,7 +25,7 @@ body {
       circle,
       rgb(253, 253, 255) 0%,
       rgb(245, 247, 255) 35%,
-      rgb(190, 207, 255) 75%
+      rgb(190, 207, 255) 70%
     );
 
   background-blend-mode: overlay;

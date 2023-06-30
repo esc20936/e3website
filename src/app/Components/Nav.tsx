@@ -29,13 +29,13 @@ const Navbar = () => {
                 Inicio
               </Link>
               <Link
-                href="/about"
+                href="/automatization"
                 className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Automatización
               </Link>
               <Link
-                href="/about"
+                href="/Automatization"
                 className="text-gray-900 hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Emotron

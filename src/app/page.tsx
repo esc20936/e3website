@@ -20,10 +20,10 @@ export default function Home() {
             variants={containerVariants}
             className=""
           >
-            <h1 className="text-6xl md:text-8xl font-bold  colorText">
+            <h1 className="text-5xl md:text-8xl font-bold  colorText">
               E3 Solutions
             </h1>
-            <p className="mt-3 text-2xl  text-blue-900  font-semibold">
+            <p className="mt-3 text-xl md:text-2xl text-blue-900  font-semibold">
               Potenciando tu éxito con innovación
             </p>
 
@@ -44,7 +44,7 @@ export default function Home() {
                 className=" text-black border-solid border-2 border-gray-500  px-6 py-2 rounded-md text-sm"
               >
                 <a href="#contact" className="font-medium">
-                  Quienes somos
+                  Servicios 
                 </a>
               </motion.button>
             </div>
