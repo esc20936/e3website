@@ -27,7 +27,7 @@ export default function Automatization() {
           <div className="flex flex-col items-start justify-end flex-1 w-full md:w-5/6 p-4 md:p-20 text-center  ">
             {/* why do it with us */}
             <h1 className="text-xl md:text-3xl font-bold text-black text-left">
-              ¿Que es emotron?
+              ¿Quien es emotron?
             </h1>
             <p className="mt-3 text-md md:text-xl text-gray-800  font-normal text-left">
               Emotron es una empresa europea líder a nivel mundial en la gestión
