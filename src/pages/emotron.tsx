@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Card from "../app/Components/Card/Card";
 import industryImage from "../../public/Images/Automatization/industry.webp";
 import emotronImage from "../../public/Images/Emotron/emotron.webp";
-
+import Link from "next/link";
 
 export default function Automatization() {
   return (
@@ -45,7 +45,7 @@ export default function Automatization() {
             </p>
 
             {/* Si tienes dudas comunicate con nosotros */}
-            <div className="flex flex-col items-center justify-center mt-10 space-x-4">
+            <div className="flex flex-row items-center justify-center mt-10 space-x-4">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -55,6 +55,17 @@ export default function Automatization() {
                   Ver productos
                 </a>
               </motion.button>
+             <Link
+                href="/contact"
+                >
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className=" text-white  bg-blue-600 border-solid border-2 border-blue-600  px-6 py-2 rounded-md text-sm"
+                >
+                    Contáctanos
+                </motion.button>
+                </Link>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center flex-1 w-full md:w-1/2  text-center ">

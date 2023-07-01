@@ -4,7 +4,7 @@ import Navbar from "@/app/Components/Nav";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import camaraImage from "../../public/Images/Camaras/camara.webp";
-
+import Link from "next/link";
 export default function Automatization() {
   return (
     <main className="flex flex-col h-screen w-full items-start justify-start">
@@ -44,18 +44,15 @@ export default function Automatization() {
 
             {/* Si tienes dudas comunicate con nosotros */}
             <div className="flex flex-col items-center justify-center mt-10 space-x-4">
+           <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className=" text-black border-solid border-2 border-gray-500  px-6 py-2 rounded-md text-sm"
               >
-                <a
-                  href="https://drive.google.com/file/d/1mtrdh95-J2UWCsmRK5lNJNKuj5PbrwEk/view"
-                  className="font-medium"
-                >
-                  Contáctanos
-                </a>
+                Contáctanos
               </motion.button>
+            </Link>
             </div>
           </div>
           
