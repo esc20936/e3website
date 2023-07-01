@@ -55,7 +55,7 @@ const Navbar = (
                 Emotron
               </Link>
               <Link
-                href="/contact"
+                href="/camaras"
                 className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 CCTV-Cámaras
@@ -152,7 +152,7 @@ const Navbar = (
                 Emotron
               </Link>
               <Link
-                href="/contact"
+                href="/camaras"
                 className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 CCTV-Cámaras
