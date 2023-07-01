@@ -7,6 +7,7 @@ import industryImage from "../../public/Images/Automatization/industry.webp";
 import biometricImage from "../../public/Images/Automatization/biometrics.webp";
 import domoticsImage from "../../public/Images/Automatization/domotics.webp";
 import factoryImage from "../../public/Images/Automatization/factory.webp";
+import Link from "next/link";
 
 export default function Automatization() {
 
@@ -47,9 +48,9 @@ export default function Automatization() {
                 whileTap={{ scale: 0.9 }}
                 className=" text-black border-solid border-2 border-gray-500  px-6 py-2 rounded-md text-sm"
               >
-                <a href="#contact" className="font-medium">
+                <Link href="/contact" className="font-medium">
                   Contáctanos 
-                </a>
+                </Link>
               </motion.button>
             </div>
           </div>

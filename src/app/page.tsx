@@ -2,6 +2,8 @@
 import React from "react";
 import Navbar from "./Components/Nav";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
 export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0, y: "100%" },
@@ -31,22 +33,13 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="bg-blue-500 text-white px-6 py-2 rounded-md text-sm"
-              >
-                <a href="#contact" className="font-medium">
-                  Contáctanos
-                </a>
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 className=" text-black border-solid border-2 border-gray-500  px-6 py-2 rounded-md text-sm"
               >
-                <a href="#contact" className="font-medium">
-                  Servicios 
-                </a>
+                <Link href="/contact" className="font-medium">
+                  Contáctanos
+                </Link>
               </motion.button>
+
             </div>
           </motion.div>
         </div>
