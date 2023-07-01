@@ -2,33 +2,36 @@ import React from 'react'
 import Image, { StaticImageData } from 'next/image';
 
 interface CardProps {
-    title: string;
-    description: string;
-    image: StaticImageData;
+    serviceMainTitle: string;
+    serviceDescription: string;
+    serviceImage: StaticImageData;
+    onClick?: () => void;
 }
 
 
 export default function Card(
-    { title, description, image }: CardProps
+    { serviceMainTitle, serviceDescription, serviceImage,onClick }: CardProps
 ) {
 
 
-  description = description.substring(0, 150) + '...';
+
+  serviceDescription = serviceDescription.substring(0, 150) + '...';
 
   return (
     <div
-        className='group rounded-lg shadow-lg bg-white w-64 sm:w-3/4 m-4 flex flex-col md:flex-row md:w-1/3 md:min-w-80 overflow-hidden   transform hover:scale-105 transition ease-linear'>
+        onClick={onClick}
+        className='group rounded-lg shadow-lg bg-white w-64 sm:w-3/4 m-4 flex flex-col md:flex-row md:w-2/3 lg:w-1/3 md:min-w-80 overflow-hidden   transform hover:scale-105 transition ease-linear'>
         <Image
             className='rounded-t-lg md:rounded-tr-none  md:rounded-l-lg group-hover:brightness-50 md:w-1/2'
-            src={image}
+            src={serviceImage}
             alt='card'
         />
         <div className='flex flex-col justify-center items-start p-4 transition ease-linear'>
             <h2 className='text-xl font-bold mb-2 text-black text-left  transition ease-linear'>
-                {title}
+                {serviceMainTitle}
             </h2>
             <p className='text-base leading-relaxed text-black  transition ease-linear'>
-                {description}
+                {serviceDescription}
             </p>
 
             <button className=' flex items-center mt-4 rounded-lg py-2 px-4 text-gray-500 transition ease-linear group-hover:text-white group-hover:bg-blue-600'>

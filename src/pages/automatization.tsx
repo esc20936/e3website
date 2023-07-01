@@ -8,9 +8,54 @@ import biometricImage from "../../public/Images/Automatization/biometrics.webp";
 import domoticsImage from "../../public/Images/Automatization/domotics.webp";
 import factoryImage from "../../public/Images/Automatization/factory.webp";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Image,{ StaticImageData } from 'next/image';
+
+interface serviceProps {
+  serviceMainTitle: string;
+  serviceTitle: string;
+  serviceDescription: string;
+  serviceImage: StaticImageData;
+  slug: string;
+}
+
+const services =[
+  {
+    serviceMainTitle:"Procesos industriales",
+    serviceTitle:"¿En qué consiste?",
+    serviceDescription:"Nuestro objetivo primordial consiste en alcanzar la máxima eficiencia en todas las áreas de nuestra planta, con el propósito de reducir costos, optimizar el tiempo y maximizar los resultados. Para lograrlo, empleamos equipos de última generación basados en la tecnología 4.0.",
+    serviceImage:industryImage,
+    slug:"/services/industrial-processes",
+  },
+  {
+    serviceMainTitle:"Biometría",
+    serviceTitle:"Protección y control",
+    serviceDescription:"Nuestra empresa brinda soluciones en el campo de los sistemas biométricos de última generación, los cuales ofrecen controles confiables, protección tanto local como remota y están respaldados por nuestra experiencia en el sector.",
+    serviceImage:biometricImage,
+    slug:"/services/biometrics",
+  },
+  {
+    serviceMainTitle:"Domótica",
+    serviceTitle:"Automatización de hogares",
+    serviceDescription:"Transforme su hogar en un espacio inteligente y eficiente con nuestro servicio de domótica. Controle y automatice funciones clave como iluminación, climatización, seguridad y entretenimiento desde cualquier lugar, a través de su dispositivo móvil. Disfrute de mayor confort, ahorro energético y tranquilidad. Descubra las ventajas de vivir en un hogar conectado con nuestra solución de domótica.",
+    serviceImage:domoticsImage,
+    slug:"/services/domotics",
+  },
+  {
+    serviceMainTitle:"Retrofit",
+    serviceTitle:"Modernización de maquinaria",
+    serviceDescription:"Ofrecemos servicios de retrofit para equipos, permitiéndote actualizar tus equipos antiguos con la tecnología más reciente. Ya no es necesario invertir en la compra de nuevos equipos cuando puedes aprovechar al máximo los que ya tienes. Mediante nuestro servicio, podrás mejorar la eficiencia, funcionalidad y rendimiento de tus equipos existentes, adaptándolos a las últimas innovaciones tecnológicas. No pierdas la oportunidad de actualizar tus equipos y optimizar tus operaciones con nuestro servicio de retrofit.",
+    serviceImage:factoryImage,
+    slug:"/services/retrofit",
+    
+  },
+
+]
+
+
 
 export default function Automatization() {
-
+  const router = useRouter();
   return (
     <main className="flex flex-col h-screen w-full items-start justify-start">
       {/* backround */}
@@ -69,28 +114,26 @@ export default function Automatization() {
 
           {/* Cards container */}
 
-          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center w-full h-auto ">
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center w-full h-auto">
 
-            <Card
-              title="Procesos industriales"
-              description="Nuestro objetivo primordial consiste en alcanzar la máxima eficiencia en todas las áreas de nuestra planta, con el propósito de reducir costos, optimizar el tiempo y maximizar los resultados. Para lograrlo, empleamos equipos de última generación basados en la tecnología 4.0."
-              image={industryImage}
-            />
-            <Card
-              title="Control de accesos"
-              description="Nuestra empresa brinda soluciones en el campo de los sistemas biométricos de última generación, los cuales ofrecen controles confiables, protección tanto local como remota y están respaldados por nuestra experiencia en el sector."
-              image={biometricImage}
-            />
-            <Card
-              title="Domótica"
-              description="Transforme su hogar en un espacio inteligente y eficiente con nuestro servicio de domótica. Controle y automatice funciones clave como iluminación, climatización, seguridad y entretenimiento desde cualquier lugar, a través de su dispositivo móvil. Disfrute de mayor confort, ahorro energético y tranquilidad. Descubra las ventajas de vivir en un hogar conectado con nuestra solución de domótica."
-              image={domoticsImage}
-            />
-            <Card
-              title="Retrofit de maquinaria"
-              description="Ofrecemos servicios de retrofit para equipos, permitiéndote actualizar tus equipos antiguos con la tecnología más reciente. Ya no es necesario invertir en la compra de nuevos equipos cuando puedes aprovechar al máximo los que ya tienes. Mediante nuestro servicio, podrás mejorar la eficiencia, funcionalidad y rendimiento de tus equipos existentes, adaptándolos a las últimas innovaciones tecnológicas. No pierdas la oportunidad de actualizar tus equipos y optimizar tus operaciones con nuestro servicio de retrofit."
-              image={factoryImage}
-            />
+            {services.map((service: serviceProps) => (
+              <Card
+                key={service.serviceMainTitle}
+                serviceMainTitle={service.serviceMainTitle}
+                serviceDescription={service.serviceDescription}
+                serviceImage={service.serviceImage}
+                onClick={() => router.push(
+                  {
+                    pathname: service.slug,
+                    query: { serviceMainTitle:service.serviceMainTitle,
+                      serviceTitle:service.serviceTitle,
+                      serviceDescription:service.serviceDescription,
+                    },
+                  }
+                )}
+
+              />
+            ))}
 
           </div>
 
