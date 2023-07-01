@@ -49,7 +49,7 @@ const Navbar = (
                 Automatización
               </Link>
               <Link
-                href="/Automatization"
+                href="/emotron"
                 className={`${textColor} hover:text-gray-400 px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Emotron
@@ -146,7 +146,7 @@ const Navbar = (
                 Automatización
               </Link>
               <Link
-                href="/contact"
+                href="/emotron"
                 className={`${textColor} hover:text-gray-400 block px-3 py-2 rounded-md text-sm font-medium`}
               >
                 Emotron
